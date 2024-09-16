@@ -1,0 +1,29 @@
+version: "1"
+
+package:
+  id: io.github.SPIERS
+  name: SPIERS
+  version: 3.1.1.1
+  kind: app
+  description: |
+    SPIERS Software - Visualisation of tomographic data
+
+command:
+  - /opt/apps/io.github.SPIERS/files/bin/SPIERSedit64
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/palaeoware/SPIERS.git
+    version: master
+    commit: 324271b33406179b911a5ba218486fc54e13f2c4
+
+build: |
+  cd /project/linglong/sources/SPIERS.git
+  git apply ../../../0001-install.patch
+  git apply ../../../0002-install.patch
+  qmake -makefile PREFIX=${PREFIX} LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+  make -j$(nproc)
+  make install

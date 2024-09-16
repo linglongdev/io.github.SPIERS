@@ -1,0 +1,24 @@
+From bb4dd86c6366771c4fdc157fddaa4164385f0446 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Mon, 16 Sep 2024 12:31:30 +0800
+Subject: [PATCH] install
+
+---
+ SPIERS.pro | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/SPIERS.pro b/SPIERS.pro
+index b358d52..37adb88 100644
+--- a/SPIERS.pro
++++ b/SPIERS.pro
+@@ -1,7 +1,6 @@
+ TEMPLATE = subdirs
+ SUBDIRS = SPIERSalign \
+           SPIERSedit \
+-          SPIERSview \
+           SPIERSutility/SPIERSversion \
+ 
+ CONFIG +=
+-- 
+2.43.4
+
