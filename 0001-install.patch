@@ -1,0 +1,49 @@
+From 7585079d6fa0df1dab97b7ac9b22666f49d31b0e Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Sat, 7 Sep 2024 16:56:40 +0800
+Subject: [PATCH] install
+ 
+---
+ SPIERSedit/SPIERSedit.desktop | 12 ++++++++++++
+ SPIERSedit/SPIERSedit.pro     |  8 ++++++++
+ 2 files changed, 20 insertions(+)
+ create mode 100644 SPIERSedit/SPIERSedit.desktop
+
+diff --git a/SPIERSedit/SPIERSedit.desktop b/SPIERSedit/SPIERSedit.desktop
+new file mode 100644
+index 0000000..86d3465
+--- /dev/null
++++ b/SPIERSedit/SPIERSedit.desktop
+@@ -0,0 +1,12 @@
++#!/usr/bin/env xdg-open
++[Desktop Entry]
++Name=SPIERSedit
++Version=3.1.0
++GenericName=Tomographic reconstruction software
++Comment=Visualise slice-based data
++Exec=SPIERSedit64
++Icon=SPIERSeditIcon
++Terminal=false
++Type=Application
++Categories=Science;Graphics;
++Name[en_GB]=SPIERSedit
+diff --git a/SPIERSedit/SPIERSedit.pro b/SPIERSedit/SPIERSedit.pro
+index 19a5871..a84a5b0 100644
+--- a/SPIERSedit/SPIERSedit.pro
++++ b/SPIERSedit/SPIERSedit.pro
+@@ -149,3 +149,11 @@ macx {
+     # as qmake uses sed for string replacements within it.
+     QMAKE_INFO_PLIST = Info.plist
+ }
++
++target.path = $$PREFIX/bin
++desktop.files = SPIERSedit.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/scalable/apps/
++icons.files = resources/SPIERSeditIcon.svg
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.43.4
+
